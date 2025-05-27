@@ -1,4 +1,9 @@
 package thread.start;
 
-public class HelloThread {
+public class HelloThread extends Thread {
+
+    @Override
+    public void run() {
+        System.out.println(Thread.currentThread().getName() + ": run()");
+    }
 }

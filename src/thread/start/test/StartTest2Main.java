@@ -2,13 +2,15 @@ package thread.start.test;
 
 import static util.MyLogger.log;
 
-public class StartTest1Main {
+public class StartTest2Main {
     public static void main(String[] args) {
-        CountThread countThread = new CountThread();
-        countThread.start();
+        CountRunnable countRunnable = new CountRunnable();
+        Thread thread = new Thread(countRunnable, "counter");
+        thread.start();
     }
 
-    static class CountThread extends Thread {
+    static class CountRunnable implements Runnable {
+
         @Override
         public void run() {
             for(int i = 1; i < 6; i++) {
