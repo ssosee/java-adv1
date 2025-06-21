@@ -7,7 +7,10 @@ public class BankMain {
     public static void main(String[] args) throws InterruptedException {
         // BankAccount bankAccount = new BankAccountV1(1000);
         // BankAccount bankAccount = new BankAccountV2(1000);
-        BankAccount bankAccount = new BankAccountV3(1000);
+        // BankAccount bankAccount = new BankAccountV3(1000);
+        // BankAccount bankAccount = new BankAccountV4(1000);
+        // BankAccount bankAccount = new BankAccountV5(1000);
+        BankAccount bankAccount = new BankAccountV6(1000);
 
         Thread thread1 = new Thread(new WithdrawTask(bankAccount, 800), "t1");
         Thread thread2 = new Thread(new WithdrawTask(bankAccount, 800), "t2");
