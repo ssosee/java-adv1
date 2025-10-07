@@ -13,6 +13,7 @@ public class ExecutorBasicMain {
                 new LinkedBlockingQueue<>());
         log("== 초기 상태 ==");
         ExecutorUtils.printState(es); // [pool=0, active=0, queuedTask=0, completedTask=0 ]
+        // 작업이 들어올 때 마다 corePoolSize(2) 만큼 스레드가 생성되고, 그 이후로는 스레드를 재사용한다.
         es.execute(new RunnableTask("taskA")); // 스레드 생성
         es.execute(new RunnableTask("taskB")); // 스레드 생성
         es.execute(new RunnableTask("taskC")); // 스레드 재사용
